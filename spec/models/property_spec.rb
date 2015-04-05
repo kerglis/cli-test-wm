@@ -38,6 +38,4 @@ RSpec.describe Property do
     end
   end
 
-  describe "."
-
 end
