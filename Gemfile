@@ -1,0 +1,10 @@
+source 'https://rubygems.org'
+
+gem 'aruba'
+gem 'activerecord'
+gem 'logger'
+gem 'sqlite3'
+gem 'rspec'
+gem 'database_cleaner'
+gem 'thor'
+gem 'pry-byebug'
