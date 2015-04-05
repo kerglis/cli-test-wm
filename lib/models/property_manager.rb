@@ -7,7 +7,6 @@ class PropertyManager
   end
 
   def run!
-
     ::Property.user_interface_attributes.each do |key, name|
       if existing_value = @property.send(key)
         existing_value_str = " (#{existing_value})"
@@ -15,7 +14,7 @@ class PropertyManager
         existing_value_str = ""
       end
 
-      puts "#{name}#{existing_value_str}"
+      print "#{name}#{existing_value_str}: "
       value = $stdin.gets.chomp
 
       if value.present?

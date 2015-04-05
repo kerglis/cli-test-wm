@@ -3,18 +3,18 @@ class Property < ActiveRecord::Base
   scope :completed, -> { where(is_completed: true) }
   scope :incompleted, -> { where(is_completed: [ false, nil ]) }
 
-  before_save :check_is_completed
+  after_save :update_is_completed
 
   class << self
     def user_interface_attributes
       {
-        title:              'Title:',
-        property_type_str:  "Property type (#{property_types_str}):",
-        address:            'Address:',
-        nightly_rate:       'Nightly rate in EUR:',
-        max_guests:         'Max guests:',
-        email:              'Email:',
-        phone_number:       'Phone number:'
+        title:              'Title',
+        property_type_str:  "Property type. #{property_types_str}",
+        address:            'Address',
+        nightly_rate:       'Nightly rate in EUR',
+        max_guests:         'Max guests',
+        email:              'Email',
+        phone_number:       'Phone number'
       }
     end
 
@@ -49,13 +49,13 @@ class Property < ActiveRecord::Base
     ([:id] + Property.user_interface_attributes.keys).map do |ff|
       val = self.send(ff)
       "#{ff}: #{val}" if val.present?
-    end.join("; ")
+    end.compact.join("; ")
   end
 
 private
 
-  def check_is_completed
-    self.is_completed = completed?
+  def update_is_completed
+    update_column(:is_completed, completed?)
   end
 
 end

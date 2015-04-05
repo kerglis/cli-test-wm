@@ -29,7 +29,7 @@ class WimduThorApp < Thor
     properties = ::Property.incompleted
 
     if properties.present?
-      puts "#{properties.size} offers found!"
+      puts "#{properties.size} incomplete properties found!"
       properties.each do |property|
         puts property.info_str
       end
