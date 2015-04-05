@@ -93,11 +93,11 @@ Happy hacking!
 
 ## Project boostratp
 
-  $ bundle
-  $ rake
-  $ APP_ENV=test rake
-  $ rspec
+    $ bundle
+    $ rake
+    $ APP_ENV=test rake
+    $ rspec
 
 or
 
-  $ bin/wimdu
+    $ bin/wimdu
