@@ -89,3 +89,15 @@ control system we'd appreciate instructions on how to recreate the
 repo.
 
 Happy hacking!
+
+
+## Project boostratp
+
+$ bundle
+$ rake
+$ APP_ENV=test rake
+$ rspec
+
+or
+
+$ bin/wimdu
