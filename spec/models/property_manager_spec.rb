@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe PropertyManager do
+describe PropertyManager, silent: :true do
 
   let!(:p1) { Property.create(completed_hash)  }
   let!(:p2) { Property.create({ title: "Just title" }) }
@@ -18,7 +18,7 @@ describe PropertyManager do
       it { is_expected.to be_present }
     end
 
-    it{ expect { PropertyManager.new(10000) }.to raise_error ActiveRecord::RecordNotFound }
+    it{ expect { PropertyManager.new(-1) }.to raise_error ActiveRecord::RecordNotFound }
   end
 
 end

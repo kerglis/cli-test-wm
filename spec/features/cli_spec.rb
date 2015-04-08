@@ -12,12 +12,14 @@ describe "WimduThorApp" do
       expect(Property.incompleted).to be_empty
 
       # Unfortunatelly, I did not succeeded to get run_interactive(cmd) to work properly with Aruba::InProcess :((
-      output = run_interactive(cmd).stdout
-
+      # process = run_interactive(cmd)
+      # expect(process.stdout).to include("Starting with new property")
       # Property.user_interface_attributes.each do |key, name|
       #   expect(process.stdout).to include(name)
       #   type "1"
       # end
+
+      output = run_interactive(cmd).stdout
 
       expect(Property.incompleted).to be_present
       expect(output).to include("Starting with new property")
