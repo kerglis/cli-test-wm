@@ -1,10 +1,15 @@
 source 'https://rubygems.org'
 
-gem 'aruba'
-gem 'activerecord'
-gem 'logger'
+gem 'rails', '~> 4.1'
+
 gem 'sqlite3'
-gem 'rspec'
-gem 'database_cleaner'
 gem 'thor'
-gem 'pry-byebug'
+gem 'text-table'
+
+group :development, :test do
+  gem 'aruba'
+  gem 'shoulda-matchers'
+  gem 'rspec-rails'
+  gem 'database_cleaner'
+  gem 'pry'
+end

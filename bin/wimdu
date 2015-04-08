@@ -1,7 +1,5 @@
 #!/usr/bin/env ruby
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '/../'))
+require File.expand_path("../../config/environment", __FILE__)
 
-require 'config/init_app'
-require 'lib/wimdu_runner'
-
-::WimduRunner.new(ARGV.dup).execute!
+# WimduRunner.new(ARGV.dup).execute!
+WimduThorApp.start(ARGV.dup)

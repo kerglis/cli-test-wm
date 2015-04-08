@@ -1,27 +1,25 @@
 require "spec_helper"
 
-describe "Wimdu CLI" do
-  let(:exe) { File.expand_path('../../bin/wimdu', __FILE__) }
+describe "WimduThorApp" do
 
-  before do
-    Property.delete_all
-  end
+  let(:bin) { File.expand_path(Rails.root.join("bin/wimdu"), __FILE__) }
 
   describe "new" do
-    let(:cmd) { "#{exe} new" }
+    let(:cmd) { "#{bin} new" }
 
     it "allows for entering data" do
       expect(Property.completed).to be_empty
 
       process = run_interactive(cmd)
-      expect(process.output).to include("Starting with new property")
+
+      expect(process.stdout).to include("Starting with new property")
 
       Property.user_interface_attributes.each do |key, name|
-        expect(process.output).to include(name)
-        type "1"
+        expect(process.stdout).to include(name)
       end
 
       expect(Property.completed).to be_present
     end
   end
+
 end

@@ -1,4 +1,4 @@
-class Schema < ActiveRecord::Migration
+class CreateProperties < ActiveRecord::Migration
   def change
     create_table :properties, force: true do |t|
       t.string :title

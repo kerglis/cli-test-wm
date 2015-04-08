@@ -1,9 +1,6 @@
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), './'))
-require 'config/init_app'
+# Add your own tasks in files placed in lib/tasks ending in .rake,
+# for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
 
-task default: :migrate
+require File.expand_path('../config/application', __FILE__)
 
-desc "Run migrations"
-task :migrate do
-  ActiveRecord::Migrator.migrate('db/migrate', ENV["VERSION"] ? ENV["VERSION"].to_i : nil)
-end
+Rails.application.load_tasks
