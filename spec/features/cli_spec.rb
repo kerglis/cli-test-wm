@@ -48,7 +48,6 @@ describe "WimduThorApp" do
 
       it "shows only incomplete properties" do
         output = run_interactive(cmd).stdout
-
         expect(output).to_not include(p1.title)
         expect(output).to include(p2.title)
       end

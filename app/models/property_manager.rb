@@ -11,7 +11,7 @@ class PropertyManager
   def run!
     Property.user_interface_attributes.each do |key, name|
       if existing_value = @property.send(key)
-        existing_value_str = " (#{existing_value})"
+        existing_value_str = " [#{existing_value}]"
       else
         existing_value_str = ""
       end
@@ -33,8 +33,6 @@ class PropertyManager
         end
       end
     end
-
-    @property.try(:reload)
 
     state = @property.is_completed? ? "Completed" : "Incompleted"
     puts "Property with ID: #{@property.id} - #{state}"
