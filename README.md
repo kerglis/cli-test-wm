@@ -1,5 +1,7 @@
 [![Code Climate](https://codeclimate.com/github/kerglis/cli-test-wm/badges/gpa.svg)](https://codeclimate.com/github/kerglis/cli-test-wm)
 
+[![Test Coverage](https://codeclimate.com/github/kerglis/cli-test-wm/badges/coverage.svg)](https://codeclimate.com/github/kerglis/cli-test-wm)
+
 # Wimdu coding challenge
 
 On wimdu.com, people can list their place to rent out. Wouldn't it be
