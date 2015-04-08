@@ -31,9 +31,3 @@ RSpec.configure do |config|
     clean_current_dir
   end
 end
-
-# Aruba.configure do |config|
-#   config.before_cmd do |cmd|
-#     puts "About to run '#{cmd}'"
-#   end
-# end

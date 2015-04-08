@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 require File.expand_path("../../config/environment", __FILE__)
 
-# WimduRunner.new(ARGV.dup).execute!
-WimduThorApp.start(ARGV.dup)
+WimduRunner.new(ARGV.dup).execute!
+# WimduThorApp.start(ARGV.dup)
