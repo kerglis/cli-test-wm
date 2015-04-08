@@ -1,7 +1,3 @@
-require 'lib/wimdu_thor_app'
-require 'lib/models/property'
-require 'lib/models/property_manager'
-
 class WimduRunner
   # Allow everything fun to be injected from the outside while defaulting to normal implementations.
   def initialize(argv, stdin = STDIN, stdout = STDOUT, stderr = STDERR, kernel = Kernel)
@@ -11,6 +7,7 @@ class WimduRunner
   def execute!
     exit_code = begin
       # Thor accesses these streams directly rather than letting them be injected, so we replace them...
+
       $stderr = @stderr
       $stdin = @stdin
       $stdout = @stdout
@@ -38,6 +35,7 @@ class WimduRunner
       # MyApp.reset_singleton_instance_variables
 
       # ...then we put the streams back.
+
       $stderr = STDERR
       $stdin = STDIN
       $stdout = STDOUT

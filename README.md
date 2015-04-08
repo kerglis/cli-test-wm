@@ -94,10 +94,9 @@ Happy hacking!
 ## Project boostratp
 
     $ bundle
-    $ rake
-    $ APP_ENV=test rake
+    $ rake db:setup
     $ rspec
 
-or
+## CLI
 
     $ bin/wimdu
